@@ -8,6 +8,13 @@ SingleLinkedList* singleLL_make() {
   return list;
 }
 
+void singleLL_destroy(SingleLinkedList* list) {
+  while (1) {
+    if (singleLL_pop(list) == NULL) break;
+  }
+  free(list);
+}
+
 void* singleLL_pop(struct SingleLinkedList* list) {
   SingleLinkedNode *head = list->head;
   if (head == NULL) return NULL;
@@ -47,6 +54,12 @@ DoubleLinkedList* doubleLL_make() {
   return list;
 }
 
+void doubleLL_destroy(DoubleLinkedList* list) {
+  while (1) {
+    if (doubleLL_pop(list) == NULL) break;
+  }
+  free(list);
+}
 
 void* doubleLL_unshift(struct DoubleLinkedList* list) {
   DoubleLinkedNode *node = list->head;

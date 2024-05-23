@@ -3,8 +3,8 @@
 
 Test(linkedList, flip) {
   SingleLinkedList *list = singleLL_make();
-  int first;
-  int secnd;
+  int first = 0;
+  int secnd = 0;
   cr_assert_eq(list->len, 0);
   singleLL_append(list, &first);
   cr_assert_eq(list->len, 1);
@@ -18,17 +18,19 @@ Test(linkedList, flip) {
   cr_assert_eq(list->len, 1);
   cr_assert_eq(singleLL_pop(list), &first);
   cr_assert_eq(list->len, 0);
+  singleLL_destroy(list);
 }
 
 
 Test(DoubleLinkedList, queue) {
   DoubleLinkedList *list = doubleLL_make();
-  void* first;
-  void* secnd;
+  void* first = 0;
+  void* secnd = 0;
   cr_assert_eq(doubleLL_append(list, first), 0);
   cr_assert_eq(doubleLL_append(list, secnd), 0);
   cr_assert_eq(doubleLL_unshift(list), first);
   cr_assert_eq(doubleLL_unshift(list), secnd, "Last added should be last unshifted");
+  doubleLL_destroy(list);
 }
 
 
@@ -40,6 +42,13 @@ Test(DoubleLinkedList, recover) {
   val = 2;
   doubleLL_shift(list, &val);
   cr_assert_eq(*(int*)doubleLL_pop(list), 2);
+  val = 3;
+  doubleLL_append(list, &val);
+  cr_assert_eq(*(int*)doubleLL_pop(list), 3);
+  val = 4;
+  doubleLL_shift(list, &val);
+  cr_assert_eq(*(int*)doubleLL_unshift(list), 4);
+  doubleLL_destroy(list);
 }
 
 
@@ -59,6 +68,7 @@ Test(DoubleLinkedList, flip) {
   cr_assert_eq(list->len, 1);
   cr_assert_eq(doubleLL_pop(list), &first);
   cr_assert_eq(list->len, 0);
+  doubleLL_destroy(list);
 }
 
 

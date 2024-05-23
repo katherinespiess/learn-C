@@ -18,6 +18,11 @@ typedef struct SingleLinkedList {
 SingleLinkedList* singleLL_make();
 
 /**
+ * Destroy/free the all references;
+ */
+void singleLL_destroy(SingleLinkedList* list);
+
+/**
  * Adds an element to the list
  *
  * @param list is the list that will receive a new item.
@@ -59,6 +64,10 @@ typedef struct DoubleLinkedList {
  * @returns a new instance of DoubleLinkedList, initialized.
  */
 DoubleLinkedList* doubleLL_make();
+/**
+ * Destroy/free the all references;
+ */
+void doubleLL_destroy(DoubleLinkedList* list);
 
 /**
  * Adds an element to the beginning of the list
