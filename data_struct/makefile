@@ -19,8 +19,10 @@ clean:
 linkedListTest: linkedList.c linkedListTest.c
 	$(CC) $(CFLAGS) $(CRITEREONFLAGS) linkedList.c linkedListTest.c -o linkedListTest
 	./linkedListTest
+	rm linkedListTest
   
 arrayListTest: arrayList.c arrayListTest.c
 	$(CC) $(CFLAGS) $(CRITEREONFLAGS) arrayList.c arrayListTest.c -o arrayListTest
 	./arrayListTest
+	rm arrayListTest
   
