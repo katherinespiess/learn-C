@@ -47,3 +47,16 @@ void* arrayL_set(struct ArrayList* list, int pos, void* data) {
 
   return old;
 }
+
+
+void *arrayL_remove(struct ArrayList *list, int pos) {
+  if (pos < 0 || pos >= list->len) return NULL;
+  void* old = list->data[pos];
+
+  //shift the data back
+  for (int i = pos; i < list->len-1; i++) {
+    list->data[i] = list->data[i+1];
+  }
+  list->len--;
+  return old;
+}
