@@ -26,3 +26,8 @@ arrayListTest: arrayList.c arrayListTest.c
 	./arrayListTest
 	rm arrayListTest
   
+hashMapTest: hashMap.c hashMapTest.c
+	$(CC) $(CFLAGS) $(CRITEREONFLAGS) hashMap.c hashMapTest.c arrayList.c -o hashMapTest
+	./hashMapTest
+	rm hashMapTest
+  

@@ -1,5 +1,5 @@
-#ifndef LINKDELIST_H
-#define LINKDELIST_H
+#ifndef ARRAYLIST_H
+#define ARRAYLIST_H
 
 typedef struct ArrayList {
   int len;
