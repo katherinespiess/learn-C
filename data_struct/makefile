@@ -16,18 +16,7 @@ OBJECTS = $(SOURCES:.c=.o)
 clean:
 	rm -f $(OBJECTS) $(EXECUTABLE)
 
-linkedListTest: linkedList.c linkedListTest.c
-	$(CC) $(CFLAGS) $(CRITEREONFLAGS) linkedList.c linkedListTest.c -o linkedListTest
-	./linkedListTest
-	rm linkedListTest
-  
-arrayListTest: arrayList.c arrayListTest.c
-	$(CC) $(CFLAGS) $(CRITEREONFLAGS) arrayList.c arrayListTest.c -o arrayListTest
-	./arrayListTest
-	rm arrayListTest
-  
-hashMapTest: hashMap.c hashMapTest.c
-	$(CC) $(CFLAGS) $(CRITEREONFLAGS) hashMap.c hashMapTest.c arrayList.c -o hashMapTest
-	./hashMapTest
-	rm hashMapTest
-  
+test:
+	$(CC) $(CFLAGS) $(CRITEREONFLAGS) $(SOURCES) -o test
+	./test
+	rm test
